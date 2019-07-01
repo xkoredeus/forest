@@ -3,7 +3,7 @@
 $green: #708238
 $yellow: #DA984A
 $dark: #232A32
-
+$gray: #E5E5E5
 $got-reg: 'GothamPro'
 $got-med: 'GothamPro-Medium'
 $got-bold: 'GothamPro-Bold'
@@ -117,7 +117,7 @@ button:active
 			position: absolute
 			width: 8px
 			height: 8px
-			background-color: #EE414F
+			background-color: #E5E5E5
 			left: 0
 			top: 8px
 			border-radius: 50%
@@ -154,11 +154,7 @@ button:active
 			bottom: -5%
 			left: -5%
 			z-index: 1
-			background: rgb(255,203,5)
-			background: -moz-linear-gradient(-45deg, rgba(255,203,5,1) 0%, rgba(80,184,72,1) 32%, rgba(0,191,243,1) 70%, rgba(238,51,123,1) 100%)
-			background: -webkit-linear-gradient(-45deg, rgba(255,203,5,1) 0%,rgba(80,184,72,1) 32%,rgba(0,191,243,1) 70%,rgba(238,51,123,1) 100%)
-			background: linear-gradient(135deg, rgba(255,203,5,1) 0%,rgba(80,184,72,1) 32%,rgba(0,191,243,1) 70%,rgba(238,51,123,1) 100%)
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcb05', endColorstr='#ee337b',GradientType=1 )
+			background: $gray
 			opacity: .7
 	.popup_call__wrp
 		max-width: 320px
@@ -181,7 +177,7 @@ button:active
 			align-items: center
 			justify-content: flex-start
 			background-color: #fff
-			color: #2D2A2B
+			color: $gray
 			padding: 20px 25px 30px
 			text-align: center
 			&__ttl
@@ -204,7 +200,7 @@ button:active
 				font-size: 12px
 				a
 					font-size: 12px 
-					color: #00BFF3
+					color: $yellow
 .owl-carousel
 	.owl-dots
 		position: absolute
@@ -235,7 +231,7 @@ button:active
 			border-radius: 50%
 			padding: 10px !important
 			border: 2px solid #000
-			background-color: #fff
+			background-color: transparent
 		button.owl-prev:hover,
 		button.owl-next:hover
 			background-color: $yellow
@@ -331,6 +327,7 @@ button:active
 					opacity: .7
 .nav
 	padding: 15px 0
+	background-color: $gray
 	&__logo
 		&:hover
 			img
@@ -340,6 +337,29 @@ button:active
 		text-transform: uppercase
 .offer
 	overflow: hidden
+	position: relative
+	// padding-bottom: 40px
+	background: linear-gradient(to bottom, $gray 0%, $gray 65.9%, #ffffff 66%, #ffffff 100%)
+	.container
+		position: relative
+		&::before
+			content: ''
+			position: absolute
+			width: 560px
+			height: 100%
+			background-color: $gray
+			right: 0
+			top: 0px
+	&::after
+		content: ''
+		position: absolute
+		width: 60px
+		height: 15px
+		background: url(../img/offer__decor_2.png) no-repeat 50% 50%/contain
+		left: 50%
+		margin-left: -30px
+		bottom: 0px
+		z-index: 1
 	&__item
 		color: #fff
 		max-width: 970px
@@ -351,6 +371,7 @@ button:active
 		height: 518px
 		padding-left: 40px
 		padding-top: 40px
+		margin-bottom: 40px
 		background-position: 50% 50%
 		background-repeat: no-repeat
 		background-size: cover
@@ -391,14 +412,6 @@ button:active
 			top: 0
 			background-color: $yellow
 			opacity: 0
-		&::after
-			content: ''
-			position: absolute
-			width: 57px
-			height: 15px
-			background: url('../img/offer__decor_1.png') no-repeat 50% 50% / contain
-			left: -20px
-			bottom: -52px
 		&-ttl
 			position: relative
 			font-family: $got-bold
@@ -411,10 +424,36 @@ button:active
 		.offer__info::before
 			opacity: .7
 	.owl-dots
-		bottom: 80px
+		bottom: 110px
 		left: 100px
 		justify-content: flex-start
 .act
+	overflow: hidden
+	padding: 0
+	position: relative
+	&::after
+		content: ''
+		position: absolute
+		width: 60px
+		height: 15px
+		background: url(../img/offer__decor_2.png) no-repeat 50% 50%/contain
+		left: 50%
+		margin-left: -30px
+		bottom: 0px
+		z-index: 1
+	.container
+		padding: 60px 0
+		position: relative
+		&::before
+			content: ''
+			position: absolute
+			width: 560px
+			height: 100%
+			background-color: $gray
+			right: 0
+			top: 0px
+		& >*
+			position: relative
 	&__item
 		display: flex
 		flex-direction: column
@@ -431,3 +470,77 @@ button:active
 			font-size: 15px
 			text-align: center
 			font-family: $got-med
+	&__in
+		position: relative
+		&::after
+			content: ''
+			position: absolute
+			width: 331px
+			height: 474px
+			background: url('../img/act__tree.png') no-repeat 50% 50% / contain
+			right: -200px
+			top: 30px
+	&__img
+		width: 860px
+		height: 518px
+		background: url('../img/act__home.png') no-repeat 50% 50% / contain
+		position: absolute
+		left: -200px
+		top: 0
+.cat
+	background-color: $gray
+	&__item
+		height: 330px
+		background-position: 50% 50%
+		background-repeat: no-repeat
+		background-size: cover
+		box-shadow: inset 0px -50px 50px rgba(0, 0, 0, 0.5)
+		color: #fff
+		padding: 30px
+		position: relative
+		overflow: hidden
+		&::before
+			content: ''
+			position: absolute
+			width: 100%
+			height: 100%
+			left: 0
+			top: 0
+			background: $yellow
+			opacity: 0
+		&-in
+			height: 100%
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			position: relative
+			transform: translateY(80%)
+			transition: .6s all ease
+		&-ttl
+			font-family: $got-bold
+			font-size: 18px
+		&-descr
+			font-size: 16px
+			// font-family: $got-med
+			opacity: 0
+			max-width: 300px
+		.btn
+			border-color: #fff
+			color: #fff
+			opacity: 0
+			max-width: 350px
+			&:hover
+				color: #fff
+				background-color: $green
+				border-color: $green
+		&:hover
+			&::before
+				opacity: .87
+			.cat__item
+				&-in
+					transform: translateY(0)
+					.btn
+						opacity: 1
+				&-descr
+					opacity: 1
+
