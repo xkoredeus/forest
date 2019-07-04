@@ -5,6 +5,13 @@ $(function() {
       loop: false,
       dots: true,
       navText: ["<img src='img/slider__arrow_prev.png'>", "<img src='img/slider__arrow_next.png'>"],
+	});
+  $('.type__item-gal').owlCarousel({
+      nav: true,
+      items: 4,
+      loop: false,
+      dots: false,
+      navText: ["<img src='img/slider__arrow_prev.png'>", "<img src='img/slider__arrow_next.png'>"],
       // responsive : {
       //   0   : {
       //       items: 1
@@ -22,10 +29,10 @@ $(function() {
       //       items: 4
       //   }
       // }
-	});
+  });
 	// tabs 
   $(document).ready(function () {
-    $(".tabs-content__item:not(:first-child)").hide();
+    $(".tabs__content-item:not(:first-child)").hide();
     $(".tabs__container div.tabs__content-item.active-tab").show();
     $('ul.tabs__list > li').click(function () {
       if (!($(this).hasClass('active'))) {
@@ -36,6 +43,9 @@ $(function() {
       }
     });
   });
+   $('.tech__item').hover( function() {
+    $(this).toggleClass('active');
+   });
   //Закрываем AjaxForm popup после успешной отправки
   // $(document).on('af_complete', function(event,res) {
   //   if(res.success) parent.$.fancybox.close();
