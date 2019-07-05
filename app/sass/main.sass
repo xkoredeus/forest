@@ -40,7 +40,7 @@ input:focus, input:active, .btn, .btn:after, select:focus, select:active
 	transition: all 0.4s ease
 	cursor: pointer
 a
-	color: #000
+	color: $dark
 	&:hover
 		color: $green
 button
@@ -72,9 +72,70 @@ input:active,
 textarea:active
 	background: none
 	color: #2D2A2B
-	border-bottom: 1px solid $dark
+	border-bottom: 1px solid $green
 	// border-color: transparent
 	outline: none
+.checkbox
+	min-width: 200px
+	cursor: pointer
+	position: relative
+	margin-bottom: 0
+	input[type="checkbox"],
+	input[type="radio"]
+		position: absolute
+		z-index: 1
+		opacity: 0
+		width: 100%
+		height: 20px
+		cursor: pointer
+	.checkbox__text
+		font-size: 14px
+		position: relative
+		padding-left: 30px
+		cursor: pointer
+		width: 100%
+		height: 30px
+		display: block
+		&::before
+			content: ''
+			position: absolute
+			top: 0px
+			left: -2px
+			width: 20px
+			height: 20px
+			border-radius: 2px
+			border: 1px solid #c3c2c2
+			background: #fff
+		&::after
+			content: ''
+			position: absolute
+			top: 50%
+			margin-top: -11px
+			left: 2px
+			width: 12px
+			height: 12px
+			background-color: $green
+			border-radius: 2px
+			opacity: 0
+			transform: scale(0)
+			transition: 0.2s
+		a
+			color: $green
+			text-decoration: underline
+			position: relative
+			z-index: 2
+	input[type="checkbox"]:checked + .checkbox__text:after,
+	input[type="radio"]:checked + .checkbox__text:after
+		opacity: 1
+		transform: scale(1)
+	input[type="checkbox"]:checked + .checkbox__text:before,
+	input[type="radio"]:checked + .checkbox__text:before
+		background-color: #fff
+.und
+	text-decoration: underline
+.img-fluid
+	max-width: 100%
+	height: auto
 .shd,
 button:active
 	box-shadow: 0px 12px 28px -13px rgba(0,0,0,0.64)
@@ -291,8 +352,7 @@ button:active
 	&_inner
 		padding: 60px 0
 	&__ttl
-		font-size: 36px
-		// color: $dark
+		font-size: 33px
 		font-family: $got-black
 		letter-spacing: 2px
 		margin-bottom: 45px
@@ -1052,3 +1112,130 @@ button:active
 			&:hover
 				color: #fff
 				border-color: $green
+.feed
+	overflow: hidden
+	.section__ttl
+		text-align: left
+		margin-bottom: 20px
+	&__img
+		position: absolute
+		width: 150%
+		height: 100%
+		right: 0
+		top: 0
+		background: url('../img/feed__bg.jpg') no-repeat 50% 50% / cover
+		&-wrp
+			height: 100%
+			position: relative
+	&__form
+		max-width: 570px
+		margin-left: auto
+		margin-right: auto
+	.input__wrp
+		max-width: unset
+		width: 100%
+	.btn
+		max-width: 220px
+.map
+	.section__ttl
+		text-align: left
+		margin-bottom: 20px
+	&__tel
+		font-size: 22px
+		font-family: $got-black
+		text-transform: uppercase
+	&__ttl
+		font-size: 18px
+		font-family: $got-black
+		text-transform: uppercase
+		margin-bottom: 4px
+	&__in
+		position: relative
+		.tabs__list
+			position: absolute
+			left: 10px
+			top: 10px
+			display: flex
+			z-index: 1
+			li
+				font-family: $got-bold
+				text-transform: uppercase
+				text-align: center
+				background-color: #fff
+				padding: 15px 20px
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+				&:hover:not(.active)
+					transform: translateY(5px)
+				&.active
+					color: #fff
+					background-color: $yellow
+				&:not(:last-child)
+					margin-right: 15px
+.footer
+	font-size: 13px
+	color: #fff
+	background-color: $dark
+	padding: 40px 0
+	&__link
+		font-size: 13px
+		text-transform: uppercase
+		color: #fff
+		&:hover
+			color: $yellow
+	&__soc
+		&-item
+			width: 20px
+			height: 20px
+			border: 1px solid #fff
+			border-radius: 3px
+			display: flex
+			justify-content: center
+			align-items: center
+			position: relative
+			overflow: hidden
+			color: #fff
+			&::before
+				content: ''
+				position: absolute
+				width: 100%
+				height: 100%
+				background-color: $yellow
+				left: 0
+				top: 0
+				opacity: 0
+			img
+				position: relative
+			&:not(:last-child)
+				margin-right: 6px
+			&:hover
+				&::before
+					opacity: .7
+	&__logo
+		&:hover
+			img
+				transform: scale(.93)
+	&__copy
+		color: #fff
+		&:hover
+			animation: bzzz 1 linear 1.3s
+@keyframes bzzz
+	10%
+		transform: translateX(3px) rotate(2deg)
+	20%
+		transform: translateX(-3px) rotate(-2deg)
+	30%
+		transform: translateX(3px) rotate(2deg)
+	40%
+		transform: translateX(-3px) rotate(-2deg)
+	50%
+		transform: translateX(2px) rotate(1deg)
+	60%
+		transform: translateX(-2px) rotate(-1deg)
+	70%
+		transform: translateX(2px) rotate(1deg)
+	80%
+		transform: translateX(-2px) rotate(-1deg)
+	90%
+		transform: translateX(1px) rotate(0)
+	100%
+		transform: translateX(-1px) rotate(0)

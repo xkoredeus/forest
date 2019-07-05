@@ -885,6 +885,110 @@
 			</div>
 		</div>
 	</section>
+	<section class="feed">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 pr-2 pr-xl-0">
+					<div class="feed__img-wrp">
+						<div class="feed__img"></div>
+					</div>
+				</div>
+				<div class="col-xl-6 pl-xl-4">
+					<div class="section_inner">
+						<h3 class="section__ttl">Записаться на просмотр дома или задать вопрос</h3>
+						<p class="mb-4">В удобное для Вас время мы ждём Вас без очереди</p>
+						<form action="" class="feed__form d-flex flex-column">
+							<div class="input__wrp input__wrp_name mb-4">
+								<input type="text" placeholder="Имя" required="">
+							</div>
+							<div class="input__wrp input__wrp_tel mb-4">
+								<input type="tel" placeholder="+7 (___) - ___ - __ - __" required="">
+							</div>
+							<div class="input__wrp input__wrp_mail mb-5">
+								<input type="email" placeholder="E-mail" required="">
+							</div>
+							<input type="submit" value="Отправить" class="btn btn_transp mb-4">
+							<label for="cart__checkbox_1" class="checkbox mb-3">
+								<input type="checkbox" id="feed__checkbox_1" name="cart__delivery_1" required="">
+								<span class="checkbox__text">Я согласен на обработку <a href="#">персональных данных</a></span>
+							</label>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="map">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 mb-3 mb-xl-0">
+					<div class="section_inner">
+						<h3 class="section__ttl">Тест драйв дома</h3>
+						<a href="tel:8800000000" class="map__tel mb-3 d-block">8 (800) 000-00-00</a>
+						<div class="map__ttl">Адрес шоурума:</div>
+						<div class="mb-4">г. Самара, ул. Черемшанская 126</div>
+						<div class="map__ttl">Часы работы:</div>
+						<div class="mb-4">пн.-пт. с 10:00 до 19:00</div>
+						<a href="mailto:info@foreststyle.ru" class="und">info@foreststyle.ru</a>
+					</div>
+				</div>
+				<div class="pl-2 pl-xl-0 col-xl-6">
+					<div class="map__in tabs">
+						<ul class="tabs__list">
+							<li class="active">Шоурум в ТЦ Идея</li>
+							<li>Шоурум в ТЦ Мега</li>
+						</ul>
+						<div class="tabs__container">
+							<div class="tabs__content-item active-tab">
+								<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A2a2079e6d8992dea7c679cc8ec355ebefaa1d823feea1b5de3e354d97ce2134b&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+							</div>
+							<div class="tabs__content-item">
+								<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A2a2079e6d8992dea7c679cc8ec355ebefaa1d823feea1b5de3e354d97ce2134b&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="footer">
+		<div class="container">
+			<div class="row mb-4 align-items-center">
+				<div class="col-xl-10">
+					<div class="footer__list d-flex justify-content-between align-items-center">
+						<a href="#" class="footer__link">Модели</a>
+						<a href="#" class="footer__link">проекты</a>
+						<a href="#" class="footer__link">Технологии</a>
+						<a href="#" class="footer__link">о компании</a>
+						<a href="#" class="footer__link">корпоративным клиентам</a>
+						<a href="#" class="footer__link">Дилерам</a>
+						<a href="#" class="footer__link">записаться на просмотр</a>
+					</div>
+				</div>
+				<div class="col-xl-2">
+						<div class="footer__soc d-flex justify-content-end">
+							<a href="#" class="footer__soc-item"><img src="img/icon__vk.png" alt=""></a>
+							<a href="#" class="footer__soc-item"><img src="img/icon__fb.png" alt=""></a>
+							<a href="#" class="footer__soc-item"><img src="img/icon__in.png" alt=""></a>
+						</div>
+				</div>
+			</div>
+			<div class="row align-items-end">
+				<div class="col-xl-2">
+					<a href="#" class="footer__logo"><img src="img/footer__logo.png" alt=""></a>
+				</div>
+				<div class="col-xl-7">
+					<p>ООО Волга Партнер Адрес производства: Красноглинский район, ПГТ Новосемейкино, ул. Солнчная, 3а Телефон: 8 800 222 22 22</p>
+					<div>© 2019 Модульные дома ForestStyle</div>
+				</div>
+				<div class="col-xl-3">
+					<a href="https://akticom.ru/" target="_blank" class="footer__copy d-flex justify-content-end flex-wrap flex-sm-nowrap">
+						<span class="mr-0 mr-sm-2">Дизайн и создание сайта</span>
+						<img src="img/icon__akticom.png" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="popup_call" class="popup__container" style="display:none">
 		<div  class="popup__wrp popup_call__wrp">
 			<form action="[[~[[*id]]]]" method="post" class="popup">
@@ -906,6 +1010,7 @@
 		</div>
 	</div>
 	<script src="js/libs.min.js"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=3629c6cc-8564-466b-9c39-8680f92c24c3&lang=ru_RU" type="text/javascript"></script>
 	<script src="js/scripts.js"></script>
 </body>
 </html>
