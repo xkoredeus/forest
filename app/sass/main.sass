@@ -133,6 +133,8 @@ textarea:active
 		background-color: #fff
 .und
 	text-decoration: underline
+.tac
+	text-align: center
 .img-fluid
 	max-width: 100%
 	height: auto
@@ -193,6 +195,22 @@ button:active
 				left: 0
 				top: 8px
 				border-radius: 50%
+	&_string
+		list-style-type: none
+		padding-left: 0
+		li
+			padding-left: 25px
+			position: relative
+			&
+				margin-bottom: 10px
+			&::before
+				content: ''
+				position: absolute
+				width: 12px
+				height: 1px
+				background-color: $dark
+				left: 0
+				top: 9px
 	&_square
 		list-style-type: none
 		padding-left: 0
@@ -283,6 +301,7 @@ button:active
 				width: 100%
 				margin-bottom: 15px
 			&__policy
+				color: #000
 				margin-top: 15px
 				max-width: 230px
 				text-align: center
@@ -407,8 +426,8 @@ button:active
 			margin-right: 28px
 	&__soc
 		&-item
-			width: 20px
-			height: 20px
+			width: 22px
+			height: 22px
 			border: 1px solid #fff
 			border-radius: 3px
 			display: flex
@@ -420,11 +439,11 @@ button:active
 			&::before
 				content: ''
 				position: absolute
-				width: 100%
-				height: 100%
+				width: 120%
+				height: 120%
 				background-color: $green
-				left: 0
-				top: 0
+				left: -2px
+				top: -2px
 				opacity: 0
 			img
 				position: relative
@@ -443,6 +462,13 @@ button:active
 	&__link
 		font-family: $got-bold
 		text-transform: uppercase
+	&__in
+		&-logo
+			display: none !important
+			margin-bottom: 15px
+			max-width: 120px
+	.btn
+		width: 212px
 .offer
 	overflow: hidden
 	position: relative
@@ -476,7 +502,7 @@ button:active
 		padding-bottom: 50px
 	&__in
 		width: 100%
-		height: 518px
+		min-height: 518px
 		padding-left: 40px
 		padding-top: 40px
 		margin-bottom: 40px
@@ -609,25 +635,43 @@ button:active
 		bottom: 0px
 		z-index: 1
 	&__item
-		height: 330px
+		min-height: 330px
+		height: 100%
 		background-position: 50% 50%
 		background-repeat: no-repeat
 		background-size: cover
 		box-shadow: inset 0px -50px 50px rgba(0, 0, 0, 0.5)
 		color: #fff
 		padding: 30px
-		position: relative
-		// overflow: hidden
-		&.hit
-			&::after
-				content: ''
-				position: absolute
-				width: 111px
-				height: 111px
-				left: -20px
-				top: -30px
-				background: url('../img/cat__hit.png') no-repeat 50% 50% / contain
-				transition: .5s all ease
+		overflow: hidden
+		display: flex
+
+		&-wrp
+			position: relative
+			&.hit
+				&::after
+					content: ''
+					position: absolute
+					width: 111px
+					height: 111px
+					left: -20px
+					top: -30px
+					background: url('../img/cat__hit.png') no-repeat 50% 50% / contain
+					transition: .5s all ease
+			&.active
+				&::after
+					transform: scale(.5)
+					left: -50px
+					top: -40px
+				.cat__item
+					&::before
+						opacity: .87
+					&-in
+						transform: translateY(0)
+						.btn
+							opacity: 1
+					&-descr
+						opacity: 1
 		&::before
 			content: ''
 			position: absolute
@@ -638,7 +682,7 @@ button:active
 			background: $yellow
 			opacity: 0
 		&-in
-			height: 100%
+			// height: 100%
 			display: flex
 			flex-direction: column
 			justify-content: space-between
@@ -662,20 +706,85 @@ button:active
 				color: #fff
 				background-color: $green
 				border-color: $green
-		&:hover
-			&::before
-				opacity: .87
-			.cat__item
-				&-in
-					transform: translateY(0)
-					.btn
-						opacity: 1
-				&-descr
-					opacity: 1
-			&::after
-				transform: scale(.5)
-				left: -50px
-				top: -40px
+	&__pop
+		max-width: 1170px
+		.section__ttl
+			margin-bottom: 5px
+		&-subttl
+			font-family: $got-black
+			font-size: 18px
+			text-transform: uppercase
+			margin-bottom: 15px
+		&-slider
+			margin-bottom: 20px
+			padding-left: 40px
+			padding-right: 40px
+			&-img
+				height: 250px
+				// width: 100%
+				width: 450px
+				background-position: 50% 50%
+				background-repeat: no-repeat
+				background-size: cover
+				display: block
+				margin-left: auto
+				margin-right: auto
+				position: relative
+				&::before
+					content: ''
+					position: absolute
+					width: 100%
+					height: 100%
+					left: 0
+					top: 0
+					background-color: $green
+					opacity: 0
+				&:hover
+					&::before
+						opacity: .7
+		&-acc
+			margin-bottom: 15px
+			&-btn
+				font-size: 16px
+				padding: 15px 20px
+				font-family: $got-black
+				text-transform: uppercase
+				position: relative
+				background-color: #F2F2F2
+				cursor: pointer
+				&::before,
+				&::after
+					content: ''
+					position: absolute
+					width: 15px
+					height: 2px
+					background-color: $dark
+				&::before
+					right: 20px
+					top: 25px
+				&::after
+					right: 20px
+					top: 25px
+					transform: rotate(90deg)
+				&.active
+					background-color: $yellow
+					color: #fff
+					&::before
+						background-color: #fff
+					&::after
+						opacity: 0
+			&-cnt
+				padding: 15px 20px
+				transition: unset
+		&-info
+			&-subttl
+				font-family: $got-black
+				text-transform: uppercase
+			&-tel
+				color: $dark
+				font-size: 22px
+				font-family: $got-black
+				text-transform: uppercase
 .type
 	position: relative
 	&::after
@@ -699,6 +808,9 @@ button:active
 					width: 49%
 					background-color: $gray
 					padding: 15px 20px
+					display: flex
+					justify-content: center
+					align-items: center
 					&:hover:not(.active)
 						opacity: .7
 					&.active
@@ -745,6 +857,8 @@ button:active
 				max-width: 100%
 				height: 270px
 				margin-bottom: 15px
+				margin-left: auto
+				margin-right: auto
 				display: block
 				background-position: 50% 50%
 				background-repeat: no-repeat
@@ -795,7 +909,7 @@ button:active
 					background-color: $green
 	&__item
 		max-width: 370px
-		height: 320px
+		min-height: 320px
 		margin-left: auto
 		margin-right: auto
 		position: relative
@@ -1184,8 +1298,8 @@ button:active
 			color: $yellow
 	&__soc
 		&-item
-			width: 20px
-			height: 20px
+			width: 22px
+			height: 22px
 			border: 1px solid #fff
 			border-radius: 3px
 			display: flex
@@ -1239,3 +1353,34 @@ button:active
 		transform: translateX(1px) rotate(0)
 	100%
 		transform: translateX(-1px) rotate(0)
+
+.preloader
+	position: fixed
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+	min-height: 100vh
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-around
+	align-content: space-around
+	flex: 1 1 25%
+	background-color: $gray
+	z-index: 1000
+
+.preloader__icon
+	width: 4em
+	height: 4em
+	margin: auto
+	background-color: $green
+	animation: rotating-plane 1.2s infinite ease-in-out
+
+@keyframes rotating-plane
+	0%
+		transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+	50%
+		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+		background-color: $yellow
+	100%
+		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)

@@ -1,17 +1,101 @@
-@media screen and (max-width: 1070px)
-	.main-slider__item
-		background-position-x: 20%
-	.main-slider__container
-		padding-right: 30px
-		padding-left: 30px
-	.main-slider .owl-carousel .owl-nav button.owl-prev
-		left: 0
-	.main-slider .owl-carousel .owl-nav button.owl-next
-		right: 0
+$green: #708238
+$yellow: #DA984A
+$dark: #232A32
+$gray: #E5E5E5
+
+$got-lig: 'GothamPro-Light'
+$got-reg: 'GothamPro'
+$got-med: 'GothamPro-Medium'
+$got-bold: 'GothamPro-Bold'
+$got-black: 'GothamPro-Black'
+$rob-reg: 'Roboto-Regular'
+$rob-bold: 'Roboto-Bold'
+
+@media screen and (max-width: 1200px)
+	.cat__pop
+		max-width: 100%
+	.act__img,
+	.act__in::after
+		opacity: .3
+	.owl-carousel .owl-nav
+		button
+			&.owl-next
+				right: 0
+				background-color: #fff
+				transform: scale(.6)
+			&.owl-prev
+				left: 0
+				background-color: #fff
+				transform: scale(.6)
+
+	.nav
+		&__in
+			border: 20px solid $gray
+			display: none
+			// position: fixed
+			&-logo
+				display: block
+		&__link
+			width: 100%
+			display: block
+			text-align: center
+			margin-bottom: 10px
+		&__logo
+			max-width: 100px
+	.feed__form
+		max-width: 370px
+		margin-left: 0
+	.footer
+		text-align: center
+@media screen and (max-width: 1004px)
+	.work
+		display: none
+	.about__info
+		position: relative
+		bottom: 0
+		padding: 10px
 @media screen and (max-width: 768px)
+	.header__info-top
+		.header__item
+			&:nth-child(1),
+			&:nth-child(2)
+				display: none !important
+	.offer .owl-dots
+		bottom: 70px
+		left: 50px
 	.section__ttl,
-	.main-slider__ttl
-		font-size: 25px
+	.offer__ttl,
+	.type__item-ttl
+		font-size: 22px
+	.section__subttl
+		font-size: 18px
+	.section_inner
+		padding: 40px 0
+	.offer__info-ttl
+		font-size: 18px
+	.tech .tabs__list li
+		width: 100%
+		max-width: 300px
+		margin-bottom: 10px
+	.cat__item,
+	.tech__item-in
+		padding: 10px
+	.popup__container
+		padding: 10px
+		.fancybox-close-small
+			top: 0
+			right: 0
+	.offer__in
+		min-height: 368px
+		padding: 15px
+	.offer__ttl::before
+		display: none
+	.cat__pop
+		padding: 15px
+	.cat__item-wrp:hover::after
+		top: -70px
+	.act__item-img
+		height: 50px
 @media screen and (max-width: 576px)
 	.news__item-wrp
 		max-width: 320px
@@ -23,3 +107,12 @@
 	.main-slider .owl-carousel .owl-nav button.owl-next
 		right: -9px
 		transform: scale(.7)
+	.offer__info::before
+		height: 270px
+	.type-main__tabs > .tabs__list li
+		padding: 10px
+	.type-sec__tabs > .tabs__list li
+		transform: scale(.9)
+		width: 49%
+		margin-bottom: 8px
+		padding: 10px
